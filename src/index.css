@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+}
+@keyframes myColor {
+  0% {background: #FFFF00;}
+  33.33% {background: #FF00FF;}
+  66.66% {background: #00FFFF;}
+}
+body{
+  background-color: #FFFF00;
+  animation: myColor 3s linear infinite;
+}
