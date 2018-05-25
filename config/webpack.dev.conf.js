@@ -71,6 +71,19 @@ module.exports = {
         ]
       },
       {
+        test: /\.scss$/,
+        include: [path.resolve(__dirname, '../src')],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {importLoaders: 2}
+          },
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
         test: /\.(png|svg|jpe?g|gif|ico)(\?.*)?$/,
         include: [path.resolve(__dirname, '../src')],
         loader: 'url-loader',

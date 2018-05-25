@@ -1,0 +1,13 @@
+h1{
+  cursor: pointer;
+  color: #FFFFFF;
+  >sub{
+    color: #999999;
+  }
+  &:hover{
+    color: #00FF00;
+    >sub{
+      color: #000000;
+    }
+  }
+}
