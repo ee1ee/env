@@ -4,8 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const Config = require('./index')
 const env = process.env.npm_config_env || 'sandbox'
@@ -81,10 +79,6 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [
-      new UglifyJSPlugin(),
-      new OptimizeCssAssetsPlugin()
-    ],
     splitChunks: {
       cacheGroups: {
         commons: {
