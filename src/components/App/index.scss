@@ -1,0 +1,22 @@
+div#app{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #333333;
+  padding: 15px;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  >h1{
+    color: #333333;
+  }
+  >p{
+    color: #666666;
+    line-height: 50px;
+  }
+  &:hover{
+    background-color: transparent;
+  }
+}

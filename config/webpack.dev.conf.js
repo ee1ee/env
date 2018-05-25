@@ -10,7 +10,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, '../src')
     },
-    extensions: [".js", ".json"]
+    extensions: [".js", ".jsx", ".json"]
   },
   entry: {
     app: ['./config/polyfills.js', './src/index.js']
@@ -54,7 +54,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         include: [path.resolve(__dirname, '../src')],
         loader: 'babel-loader'
       },
