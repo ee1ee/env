@@ -44,6 +44,7 @@
     "promise-polyfill": "^7.1.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-router": "^4.2.0",
     "whatwg-fetch": "^2.0.4"
   }
 }

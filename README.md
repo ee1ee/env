@@ -6,11 +6,11 @@
 
 ``` bash
 # install dependencies
-npm install
+yarn
 
 # serve with hot reload at localhost:8080
-npm start
+yarn start
 
 # build for production with minification
-npm run build --env=sandbox(default)/production
+yarn build --env=sandbox(default)/production
 ```

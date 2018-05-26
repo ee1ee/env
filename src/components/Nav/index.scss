@@ -1,0 +1,14 @@
+div.Nav{
+  display: flex;
+  >button{
+    flex: 1;
+    height: 35px;
+    margin: 0 10px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    &.active{
+      border-style: inset;
+    }
+  }
+}

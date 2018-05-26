@@ -1,33 +1,39 @@
 import React, {Component, Fragment} from 'react'
 import './index.scss'
+import {Prompt, Redirect, Route, Router, Switch} from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
+import Time from '../Time'
+import Nav from '../Nav'
+import AsyncRoute from '../AsyncRoute'
+const One = ()=>import('../One')
+const Two = ()=>import('../Two')
 
 class App extends Component{
-  state = {
-    now: new Date().toLocaleTimeString()
-  }
-
-  componentDidMount(){
-    this.startTiming()
-  }
-
-  componentWillUnmount(){
-    mozCancelAnimationFrame(this.rAF)
-  }
-
-  startTiming = ()=>{
-    this.setState({
-      now: new Date().toLocaleTimeString()
-    })
-    this.rAF = requestAnimationFrame(this.startTiming)
-  }
+  history = createBrowserHistory({
+    basename: `/mobileapps/env`
+  })
 
   render(){
-    const {now} = this.state
-
     return (
       <Fragment>
         <h1>Hello World!</h1>
-        <p>Now: {now}</p>
+        <Time />
+        <Router history={this.history}>
+          <Fragment>
+            <Prompt message={location=>{
+              if(location.pathname.includes('other')){
+                return "别点我"
+              }
+              return true
+            }} />
+            <Route component={Nav} />
+            <Switch>
+              <AsyncRoute exact path="/one" component={One} />
+              <AsyncRoute exact path="/two" component={Two} />
+              <Redirect to="/one" />
+            </Switch>
+          </Fragment>
+        </Router>
       </Fragment>
     )
   }
