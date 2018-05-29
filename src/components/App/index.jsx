@@ -7,6 +7,7 @@ import Nav from '../Nav'
 import AsyncRoute from '../AsyncRoute'
 const One = ()=>import('../One')
 const Two = ()=>import('../Two')
+import {hot} from 'react-hot-loader'
 
 class App extends Component{
   history = createBrowserHistory({
@@ -39,4 +40,4 @@ class App extends Component{
   }
 }
 
-export default App
+export default hot(module)(App)
